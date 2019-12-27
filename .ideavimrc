@@ -1,0 +1,62 @@
+let mapleader=","
+
+set relativenumber
+nmap nh :nohl<cr>
+nnoremap <Leader>j ^
+vnoremap <Leader>j ^
+nnoremap <leader>k $
+vnoremap <leader>k $
+nnoremap <leader>o o<esc> 
+nnoremap <leader>O O<esc>
+nnoremap <tab> V>
+nnoremap <s-tab> V<
+vmap <tab> >gv
+vmap <s-tab> <gv
+nnoremap <leader>w viw
+nnoremap s _d
+
+"映射复制、粘贴、剪贴ctrl+c ctrl+v ctrl+x
+:nnoremap <leader>v <c-v> 
+:nnoremap <c-v> "+p
+:inoremap <C-V> <Esc>"+pa
+map <c-c> "+y
+map <c-x> "+d
+" 映射全选 ctrl+a
+
+map <C-A> ggVG
+map! <C-A> <Esc>ggVG
+
+noremap <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+noremap <c-l> <c-w>l
+nnoremap <a-h> gT
+nnoremap <a-l> gt
+
+" actions
+nnoremap <space>q :action CloseContent<cr>
+nnoremap <space>Q :action ReopenClosedTab<cr>
+nnoremap <space>e :action SearchEverywhere<cr>
+nnoremap <space>E :action Switcher<cr>
+nnoremap <space>t :action FileStructurePopup<cr>
+nnoremap <space>T :action GotoSymbol<cr>
+nnoremap <space>a :action GotoAction<cr>
+nnoremap <space>b :action ToggleLineBreakpoint<cr>
+
+" code navigation
+nnoremap <space>] :action GotoImplementation<cr>
+nnoremap <space>[ :action GotoSuperMethod<cr>
+nnoremap <space>h :action HighlightUsagesInFile<cr>
+
+" code refactoring
+nnoremap <space>r :action RenameElement<cr>
+
+set scrolljump=5
+set hlsearch      " 高亮显示搜索结果
+:se so=999
+set incsearch
+set ignorecase
+set easymotion
+set surround
+set keep-english-in-normal
+set keep-english-in-insert
